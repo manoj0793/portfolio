@@ -119,16 +119,15 @@
        
     </div>
     <script>
-
+    
+    
    function validate_form(){
-       var user = {
-           firstName:"";
-           lastName:"";
-           fullName: function validate_form(){
-                return this.firstName + " " + this.lastName;
-        }
-    }
-    document.getElementById("head").innerHTML = person.fullName;
+    var user = {
+           firstName:"",
+           lastName:"",
+           }
+           console.log(user)  
+            
 	valid = true;
         if ( document.reg_form.contact_name.value == "" )
         {
