@@ -106,8 +106,8 @@
             <p style="text-align:left;">Last Name: <input type="text" name="contact_name" id="lastname"
                     placeholder="Last Name"></p>
             <p style="text-align:left;">Birthday: <input type="date" name="bday"></p>
-            <p style="text-align:left;">Your Gender: <input type="radio" name="gender" value="Male"> Male
-                <input type="radio" name="gender" value="Female"> Female</p>
+            <p style="text-align:left;">Your Gender: <input type="radio" name="gender" id="gen"value="Male"> Male
+                <input type="radio" name="gender" id="gen" value="Female"> Female</p>
 
             <p style="text-align:left;">Email id: <input required type="email" id="contact_email"
                     placeholder="abc@gmail.com"></p>
@@ -139,10 +139,12 @@
             var last = document.getElementById("lastname").value;
             var email = document.getElementById("contact_email").value;
             var phone = document.getElementById("contact_phone").value; 
+            var gender = document.getElementById("gen").value
             console.log(first);
             console.log(last);
             console.log(email);
             console.log(phone);
+            console.log(gender);
             
             webengage.user.login('we_email', email);
 
@@ -150,7 +152,7 @@
              "we_first_name" : first,
             "we_last_name" : last,
             "we_email" : email,
-            "we_gender" : phone,
+            "we_gender" : gender,
         });
     });
 
