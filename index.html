@@ -102,7 +102,7 @@
     <p style="text-align:left;">Your Gender: <input type="radio" name="gender" value="Male"> Male
         <input type="radio" name="gender" value="Female"> Female</p>
       
-    <p id="p3" style="text-align:left;">Email id: <input type="email" name="contact_email" id="email" placeholder="abc@gmail.com"></p>
+    <p id="p3" style="text-align:left;">Email id: <input type="email" name="contact_email" placeholder="abc@gmail.com"></p>
 
     <p style="text-align:left;">Phone Number: <input type="tel" name="contact_phone" placeholder="Number"></p>
 
@@ -113,22 +113,23 @@
         <option>Subject 2</option>
         <option>Subject 3</option>
         </select></p>
-       <input type="submit"  onclick="validate_form()" value="Submit">
+       <input type="submit"  onclick="validate_form()" value="Send the Data!">
 </form>
 
        
-    </div>
-    <script>
+</div>
+<script>
     
+function validate_form(){
+   
+    var first = document.getElementById("firstname").value;
+    var last = document.getElementById("lastname").value;
+    var email= document.getElementByName("contact_email").value;
+    var phone= document.getElementByName("contact_phone").value;
+    document.getElementById("head").innerHTML = first + " " + last;
+    document.getElementById("head").innerHTML = email + " " + phone;
     
-   function validate_form(){
-    var user = {
-           we_first_name:"",
-           we_last_name:"",
-           we_email:"",
-           we_gender:""
-           }
-           console.log(user)  
+   
             
 	valid = true;
         if ( document.reg_form.contact_name.value == "" )
@@ -150,8 +151,8 @@
             return (false);
         }
 }
-        function validate_form(submit) {
-  alert("Congrats! Data Saved !");
+        function validate_form() {
+            document.forms["reg_form"].submit();
 }
    }
 
