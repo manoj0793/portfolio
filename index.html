@@ -154,6 +154,13 @@
             "we_email" : email,
             "we_gender" : gender,
         });
+        webengage.track("loginClicked",{
+            "first_name" : first,
+            "last_name" : last,
+            "email": email,
+            "gender": gender,
+        })
+
     });
 
 
