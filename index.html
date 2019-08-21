@@ -113,24 +113,27 @@
         <option>Subject 2</option>
         <option>Subject 3</option>
         </select></p>
-   
-    <input type="submit" value="Submit">
-
-    
-    </form>
+       <input type="submit" value="Submit">
+</form>
 
        
     </div>
     <script>
-    function Submit(){
- var fname = document.form.user_name.value,
-  lname = document.form.user_name.value,
-  femail = document.form.Email.value,
-  freemail = document.form.enterEmail.value,
-  fpassword = document.form.Password.value,
-  fmonth = document.form.birthday_month.value,
-  fday = document.form.birthday_day.value,
-  fyear = document.form.birthday_year.value;</script>
+   function validate_form ( )
+{
+	valid = true;
+        if ( document.reg_form.contact_name.value == "" )
+        {
+                alert ( "Please fill in the 'Your Name' box." );
+                valid = false;
+        }
+        if ( ( document.contact_form.gender[0].checked == false ) && ( document.contact_form.gender[1].checked == false ) )
+        {
+                alert ( "Please choose your Gender: Male or Female" );
+                valid = false;
+        }
+
+
 
 
 </script>
