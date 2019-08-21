@@ -35,36 +35,41 @@
                 font-size: 3.5rem;
             }
         }
-    input[type=text], [type=date], [type=tel], [type=email], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
+
+        input[type=text],
+        [type=date],
+        [type=tel],
+        [type=email],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
@@ -91,72 +96,66 @@
                 <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
             </p>
         </main>
-        
-    
 
-<form name="reg_form" method="POST"onSubmit="return validate_form">
-    <p id = "head"></p>
-    <p style="text-align:left;">First Name: <input type="text" name="contact_name" id="fistname" placeholder="First Name"></p>
-    <p style="text-align:left;">Last Name: <input type="text" name="contact_name" id="lastname" placeholder="Last Name"></p>
-    <p style="text-align:left;">Birthday: <input type="date" name="bday"></p>
-    <p style="text-align:left;">Your Gender: <input type="radio" name="gender" value="Male"> Male
-        <input type="radio" name="gender" value="Female"> Female</p>
-      
-    <p id="p3" style="text-align:left;">Email id: <input type="email" name="contact_email" placeholder="abc@gmail.com"></p>
 
-    <p style="text-align:left;">Phone Number: <input type="tel" name="contact_phone" placeholder="Number"></p>
 
-    <p id="p4" style="text-align:left;">Subject:
-    <select name="Subject">
-        <option disabled="disabled" selected="selected">Choose option</option>
-        <option>Subject 1</option>
-        <option>Subject 2</option>
-        <option>Subject 3</option>
-        </select></p>
-       <input type="submit"  onclick="validate_form()" value="Send the Data!">
-</form>
+        <form name="reg_form">
+            <p id="head"></p>
+            <p style="text-align:left;">First Name: <input type="text" name="contact_name" id="firstname"
+                    placeholder="First Name" required></p>
+            <p style="text-align:left;">Last Name: <input type="text" name="contact_name" id="lastname"
+                    placeholder="Last Name"></p>
+            <p style="text-align:left;">Birthday: <input type="date" name="bday"></p>
+            <p style="text-align:left;">Your Gender: <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female</p>
 
-       
-</div>
-<script>
-    
-function validate_form(){
-   
-    var first = document.getElementById("firstname").value;
-    var last = document.getElementById("lastname").value;
-    var email= document.getElementByName("contact_email").value;
-    var phone= document.getElementByName("contact_phone").value;
-    document.getElementById("head").innerHTML = first + " " + last;
-    document.getElementById("head").innerHTML = email + " " + phone;
-    
-   
+            <p style="text-align:left;">Email id: <input required type="email" id="contact_email"
+                    placeholder="abc@gmail.com"></p>
+
+            <p style="text-align:left;">Phone Number: <input type="tel" id="contact_phone" placeholder="Number"></p>
+
+            <p id="p4" style="text-align:left;">Subject:
+                <select name="Subject">
+                    <option disabled="disabled" selected="selected">Choose option</option>
+                    <option>Subject 1</option>
+                    <option>Subject 2</option>
+                    <option>Subject 3</option>
+                </select></p>
+            <input type="submit" id="login" value="Send the Data!">
+        </form>
+
+
+    </div>
+    <script>
+
+
+
+        // document.getElementById("head").innerHTML = first + " " + last;
+        // document.getElementById("head").innerHTML = email + " " + phone;
+
+        document.getElementById("login").addEventListener("click", function(e) {
+            e.preventDefault();
+            var first = document.getElementById("firstname").value;
+            var last = document.getElementById("lastname").value;
+            var email = document.getElementById("contact_email").value;
+            var phone = document.getElementById("contact_phone").value; 
+            console.log(first);
+            console.log(last);
+            console.log(email);
+            console.log(phone);
             
-	valid = true;
-        if ( document.reg_form.contact_name.value == "" )
-        {
-                alert ( "Please fill in the 'Your Name' box." );
-                valid = false;
-        }
-        if ( ( document.contact_form.gender[0].checked == false ) && ( document.contact_form.gender[1].checked == false ) )
-        {
-                alert ( "Please choose your Gender: Male or Female" );
-                valid = false;
-        }
+            webengage.user.login('we_email', email);
 
-    function validate_form(email) {
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (reg.test(email) == false) 
-        {
-          alert('Invalid Email Address');
-            return (false);
-        }
-}
-        function validate_form() {
-            document.forms["reg_form"].submit();
-}
-   }
+            webengage.user.setAttribute({
+             "we_first_name" : first,
+            "we_last_name" : last,
+            "we_email" : email,
+            "we_gender" : phone,
+        });
+    });
 
-</script>
+
+    </script>
 </body>
 
 </html>
