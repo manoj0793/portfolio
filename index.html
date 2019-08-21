@@ -113,14 +113,22 @@
         <option>Subject 2</option>
         <option>Subject 3</option>
         </select></p>
-       <input type="submit" value="Submit">
+       <input type="submit"  onclick="validate_form()" value="Submit">
 </form>
 
        
     </div>
     <script>
-   function validate_form ( )
-{
+
+   function validate_form(){
+       var user = {
+           firstName:"";
+           lastName:"";
+           fullName: function validate_form(){
+                return this.firstName + " " + this.lastName;
+        }
+    }
+    document.getElementById("head").innerHTML = person.fullName;
 	valid = true;
         if ( document.reg_form.contact_name.value == "" )
         {
@@ -133,8 +141,18 @@
                 valid = false;
         }
 
-
-
+    function validate_form(email) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(email) == false) 
+        {
+          alert('Invalid Email Address');
+            return (false);
+        }
+}
+        function validate_form(submit) {
+  alert("Congrats! Data Saved !");
+}
+   }
 
 </script>
 </body>
