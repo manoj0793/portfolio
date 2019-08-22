@@ -161,6 +161,13 @@
             "gender": gender,
         })
 
+        webengage.notification.options('defaultRender', false);
+        webengage.onReady(function(){
+	    document.getElementById("loginClicked").onclick = function () {
+		webengage.notification.render();
+	};
+});
+
     });
 
 
