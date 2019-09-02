@@ -1,0 +1,245 @@
+<style>
+    @font-face {
+        font-family: 'Josefin Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Josefin Sans'), local('JosefinSans'), url(http://fonts.gstatic.com/s/josefinsans/v9/xgzbb53t8j-Mo-vYa23n5hampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+
+    .powered-by {
+        top: 54px;
+        position: relative;
+    }
+
+    a#webklipper-publisher-widget-container-notification-close-div {
+        background-color: transparent;
+        border: none;
+        right: 9px;
+        top: 6px;
+        text-shadow: none;
+    }
+
+    /*div.container {
+padding-bottom: 0;
+}*/
+    div,
+    p,
+    #copy-successful {
+        font-family: 'Josefin Sans';
+    }
+
+    div.container {
+        font-family: 'Josefin Sans';
+        background: transparent url('http://d16medg486y0dx.cloudfront.net/webengage/Gallery/newyearcouponcode.png') no-repeat;
+        background-size: contain;
+        height: 272px;
+        width: 500px;
+        border: none;
+    }
+
+    .backdrop {
+        opacity: 0.5;
+    }
+
+    .callToAction {
+        display: none;
+    }
+
+    #copy-div {
+        position: absolute;
+        text-align: center;
+        left: 100px;
+        margin-top: -55px;
+    }
+
+    div#copy-div:before {
+        content: 'Get Code';
+        position: relative;
+        display: block;
+        padding: 12px 0px;
+        background-color: #309FB1;
+        width: 90%;
+        left: 0px;
+        top: 37px;
+        font-size: 18px;
+        z-index: 3;
+        box-shadow: 5px 0px 5px -2px #2F2F2F;
+        border-radius: 3px;
+        transition: padding 9999999999999999s, font-size 9999999999999999s, width 9999999999999999s;
+        -webkit-transition: padding 9999999999999999s, font-size 9999999999999999s, width 9999999999999999s;
+    }
+
+    div#copy-div:hover::before {
+        padding: 12px 0px;
+        font-size: 0;
+        width: 0px;
+        transition: padding 1s, font-size 1s, width 1s;
+        -webkit-transition: padding 1s, font-size 1s, width 1s;
+    }
+
+    a.copy-button,
+    a.copy-button:hover,
+    a.copy-button:focus,
+    a.copy-button:active {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #2D67B2;
+        padding: 10px;
+        color: white;
+        letter-spacing: 1px;
+        width: 145px;
+    }
+
+    .description {
+        overflow: visible;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: white;
+    }
+
+    #copy-successful {
+        font-size: 18px;
+    }
+
+    div#know-more-div {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 11px;
+    }
+
+    a.know-more-link,
+    a.know-more-link:hover,
+    a.know-more-link:active,
+    a.know-more-link:focus {
+        text-decoration: none;
+    }
+
+    .text1 {
+        font-weight: 600;
+        font-size: 42px;
+        text-align: center;
+        margin-top: 48px;
+    }
+
+    .text2 {
+        text-align: center;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        margin-top: 35px;
+    }
+
+    span.code {
+        position: relative;
+        padding: 9px;
+        font-size: 15px;
+        border: 1px dotted white;
+        top: 0px;
+    }
+
+    .main {
+        height: 40px;
+        margin: auto;
+        margin-top: 44px;
+    }
+
+    .icon-extra-large:before {
+        vertical-align: -10%;
+        font-size: 2.3em;
+        color: white;
+    }
+
+    @media only screen and (max-width:600px) {
+        div.container {
+            font-family: 'Josefin Sans';
+            background: transparent url(http://d16medg486y0dx.cloudfront.net/webengage/Gallery/newyearcouponcode.png) no-repeat;
+            background-size: contain;
+            height: 272px;
+            width: 298px;
+            border: none;
+        }
+
+        .text1 {
+            font-weight: 600;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .text2 {
+            text-align: center;
+            font-weight: 400;
+            font-size: 21px;
+            line-height: 30px;
+            margin-top: 21px;
+        }
+
+        #copy-div {
+            position: absolute;
+            text-align: center;
+            left: 78px;
+            margin-top: -108px;
+            width: 70%;
+        }
+
+        div#copy-div:before {
+            content: 'Get Code';
+            position: relative;
+            display: block;
+            padding: 12px 0px;
+            background-color: #309FB1;
+            width: 90%;
+            left: -43px;
+            top: 59px;
+            font-size: 18px;
+            z-index: 3;
+            box-shadow: 5px 0px 5px -2px #2F2F2F;
+            border-radius: 3px;
+            transition: padding 9999999999999999s, font-size 9999999999999999s, width 9999999999999999s;
+            -webkit-transition: padding 9999999999999999s, font-size 9999999999999999s, width 9999999999999999s;
+        }
+
+        a.copy-button,
+        a.copy-button:hover,
+        a.copy-button:focus,
+        a.copy-button:active {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #2D67B2;
+            padding: 10px;
+            width: 46% !important;
+            margin-top: 23px;
+            margin-left: -77px;
+        }
+
+        span.code {
+            position: relative;
+            padding: 9px;
+            font-size: 15px;
+            border: 1px dotted white;
+            top: 0px;
+            left: -4px;
+        }
+        a#webklipper-publisher-widget-container-notification-close-div {
+        background-color: transparent;
+        border: none;
+        right: 1px;
+        top: -20px;
+        text-shadow: none;
+       }
+
+        .powered-by {
+         top: -27px;
+         position: relative;
+}
+    }
+</style>
+<div class="text1">Happier New Year!</div>
+<div class="text2">A small gift from us.<br>Extra 5% off on all products</div>
+<div class="main">
+    <br>
+    <div id="copy-div"><a class="copy-button" data-clipboard-text="WELCOME20"
+            title="Click to copy the coupon code.">COPY THE CODE</a><span class="code">WELCOME20</span>
+    </div>
+</div>
